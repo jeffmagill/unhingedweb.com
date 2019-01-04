@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
-import './layout.css'
+import Footer from './footer'
+import './layout.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -12,13 +13,19 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            menuLinks {
+              name
+              link
+            }
           }
         }
       }
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title}
+                menuLinks={data.site.siteMetadata.menuLinks}
+          />
         <div
           style={{
             margin: `0 auto`,
@@ -28,12 +35,8 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
         </div>
+        <Footer />
       </>
     )}
   />
