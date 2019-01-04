@@ -1,0 +1,68 @@
+@mixin animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+.animated {
+  @include animated;
+}
+
+@keyframes bounce {
+  0% {
+    animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+    transform: rotateZ(0deg);
+  }
+
+  20%,
+  53%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(.215,.61,.355,1);
+    transform: rotateZ(45deg) translate(-15%,0);
+  }
+
+  40% {
+    animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+    transform: rotateZ(22deg) translate(-6%,0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+    transform: rotateZ(34deg) translate(-10%,0);
+  }
+
+  90% {
+    transform: rotateZ(40deg) translate(-12%,0);
+  }
+}
+
+@mixin bounce {
+  animation-name: bounce;
+  transform-origin: 25% bottom;
+}
+
+.bounce {
+  @include bounce;
+}
+
+
+@keyframes bg-slide-start {
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes bg-slide-end {
+  to {
+    background-position: 100% 0;
+  }
+}
+
+@mixin bg-slide {
+  @include animated;
+  animation-name: bg-slide-start;
+  &:hover {
+    animation-name: bg-slide-end;
+  }
+}

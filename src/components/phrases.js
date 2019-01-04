@@ -19,11 +19,9 @@ const Phrases = () => (
     <span class="phrase phrase13">technology</span>
     <span class="phrase phrase14">inspires us to</span>
     <span class="phrase phrase15">communicate</span>
-    <div class="line">
-      <span class="phrase phrase16">simply,</span>
-      <span class="phrase phrase17">effectively</span>
-      <span class="phrase phrase18">&amp; beautifully.</span>
-    </div>
+    <span class="phrase phrase16">simply,</span>
+    <span class="phrase phrase17">effectively</span>
+    <span class="phrase phrase18">&amp; beautifully.</span>
   </section>
 )
 

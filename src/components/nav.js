@@ -1,8 +1,9 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-
 import "./nav.scss"
+
+const reactStringReplace = require('react-string-replace');
 
 const Nav = ({ menuLinks }) => (
   <nav id="nav">
@@ -10,7 +11,11 @@ const Nav = ({ menuLinks }) => (
       {
         menuLinks.map(link =>
           <li key={link.name}>
-            <Link to={link.link}>{link.name}</Link>
+            <Link to={link.link} class={link.link.replace(/^\//g, '')}>
+              { reactStringReplace(link.name, /(\w+)/g, (match, i) => (
+                <span key={i}>{match}</span>
+              )) }
+            </Link>
           </li>)
       }
     </ul>

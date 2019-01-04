@@ -1,80 +1,76 @@
-$line-height: 30px;
-
 section#phrases {
+  padding: 40px 0 80px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: baseline;
-  padding: 40px 0 80px;
-  .line {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+  .phrase {
+    display:inline-block;
   }
   .phrase1 {
-    font: normal 43px/#{$line-height} Lato;
+    font: normal 43px/55.9px Lato;
   }
   /* we */
   .phrase2 {
-    font: bold 43px/#{$line-height} "Titillium Web";
+    font: bold 43px/55.9px "Titillium Web";
   }
   /* create partnerships */
   .phrase3 {
-    font: normal 43px/#{$line-height} Lato;
+    font: normal 43px/55.9px Lato;
   }
   /* with our clients to solve */
   .phrase4 {
-    font: bold 43px/#{$line-height} "Titillium Web";
+    font: bold 43px/55.9px "Titillium Web";
   }
   /* real */
   .phrase5 {
-    font: bold 36px/#{$line-height} "Titillium Web";
+    font: bold 36px/55.9px "Titillium Web";
   }
   /* challenges */
   .phrase6 {
-    font: normal 36px/#{$line-height} Lato;
+    font: normal 36px/44px Lato;
   }
   /* using */
   .phrase7 {
-    font: bold 36px/#{$line-height} Arvo;
+    font: bold 36px/44px Arvo;
   }
   /* digital media */
   .phrase8 {
-    font: normal 36px/#{$line-height} Lato;
+    font: normal 36px/44px Lato;
   }
   /* our */
   .phrase9 {
-    font: normal 36px/#{$line-height} Arvo;
+    font: normal 36px/44px Arvo;
   }
   /* passion */
   .phrase10 {
-    font: normal 36px/#{$line-height} Lato;
+    font: normal 36px/44px Lato;
   }
   /* for */
   .phrase11 {
-    font: lighter 36px/#{$line-height} Lato;
+    font: lighter 36px/44px Lato;
     text-transform: uppercase;
   }
   /* design */
   .phrase12 {
-    font: normal 36px/#{$line-height} Lato;
+    font: normal 36px/44px Lato;
   }
   /* & */
   .phrase13 {
-    font: normal 44px/#{$line-height} Arvo;
+    font: normal 44px/44px Arvo;
     text-transform: uppercase;
   }
   /* technology */
   .phrase14 {
-    font: lighter 55px "Titillium Web";
+    font: lighter 55px/60.5px "Titillium Web";
   }
   /* inspires us to */
   .phrase15 {
-    font: normal 55px "Titillium Web";
+    font: normal 55px/60.5px "Titillium Web";
   }
   /* communicate */
   .phrase16 {
-    font: normal 66.3px "Titillium Web";
+    font: normal 66.3px/60.5px "Titillium Web";
     color: #95e000;
   }
   /* simply */
@@ -91,7 +87,43 @@ section#phrases {
   .phrase16,
   .phrase17,
   .phrase18 {
-    text-shadow: -1px 0 1px white, 0 1px 1px white, 1px 0 1px white, 0 -1px 1px white, 1px 1px 1px white, 1px -1px 1px white, -1px 1px 1px white, -1px -1px 1px white, -3px 0 3px rgba(149, 224, 0, 0.3), 0 3px 3px rgba(149, 224, 0, 0.3), 3px 0 3px rgba(149, 224, 0, 0.3), 0 -3px 3px rgba(149, 224, 0, 0.3), 3px 3px 3px rgba(149, 224, 0, 0.3), 3px -3px 3px rgba(149, 224, 0, 0.3), -3px 3px 3px rgba(149, 224, 0, 0.3), -3px -3px 3px rgba(149, 224, 0, 0.3);
+    text-shadow:
+      -1px 0 1px white,
+      0 1px 1px white,
+      1px 0 1px white,
+      0 -1px 1px white,
+      1px 1px 1px white,
+      1px -1px 1px white,
+      -1px 1px 1px white,
+      -1px -1px 1px white,
+      -3px 0 3px rgba(149, 224, 0, 0.3),
+      0 3px 3px rgba(149, 224, 0, 0.3),
+      3px 0 3px rgba(149, 224, 0, 0.3),
+      0 -3px 3px rgba(149, 224, 0, 0.3),
+      3px 3px 3px rgba(149, 224, 0, 0.3),
+      3px -3px 3px rgba(149, 224, 0, 0.3),
+      -3px 3px 3px rgba(149, 224, 0, 0.3),
+      -3px -3px 3px rgba(149, 224, 0, 0.3);
+      transition: 0.3s ease-in-out all;
+    &:hover {
+      text-shadow:
+        -2px 0 2px white,
+        0 2px 2px white,
+        2px 0 2px white,
+        0 -2px 2px white,
+        2px 2px 2px white,
+        2px -2px 2px white,
+        -2px 2px 2px white,
+        -2px -2px 2px white,
+        -9px 0 9px rgba(149, 224, 0, 0.3),
+        0 9px 9px rgba(149, 224, 0, 0.3),
+        9px 0 9px rgba(149, 224, 0, 0.3),
+        0 -9px 9px rgba(149, 224, 0, 0.3),
+        9px 9px 9px rgba(149, 224, 0, 0.3),
+        9px -9px 9px rgba(149, 224, 0, 0.3),
+        -9px 9px 9px rgba(149, 224, 0, 0.3),
+        -9px -9px 9px rgba(149, 224, 0, 0.3);
+    }
   }
   @media only screen and (max-width: 1023px) {
     padding: 33px 0 66px;

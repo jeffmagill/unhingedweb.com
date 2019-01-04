@@ -1,13 +1,25 @@
+@import 'variables';
+@import 'mixins';
+@import 'animations';
+
 nav#nav {
   ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    padding: 0;
+    margin: 0;
     li {
+      padding: 0;
+      margin: 0;
       a {
-        padding: 1em;
         margin: 0 1em;
         display: block;
+        font: bold 1.5rem Arvo;
+        @include button;
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }

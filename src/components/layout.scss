@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Arvo:400,700|Titillium+Web:400,200,700);
-
+@import 'variables';
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -42,10 +42,14 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  color: $green;
+  transition: 0.2s ease-in-out all;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  text-decoration: underline;
 }
 abbr[title] {
   border-bottom: none;
@@ -185,7 +189,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 100%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -199,7 +203,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  background: url(../images/bg-white-mezotint-tile.gif);
+  color: $body-color;
   font-family: Lato;
   font-weight: normal;
   word-wrap: break-word;
@@ -617,4 +622,8 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+main.main {
+  max-width: 960px;
+  margin: 0 auto;
 }
