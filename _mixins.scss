@@ -1,7 +1,7 @@
 @import 'variables';
 
 @mixin slide-in {
-  transition: 0.3s ease-in-out all;
+  transition: 0.2s ease-in-out all;
   position:relative;
   overflow: hidden;
 
@@ -9,7 +9,6 @@
   &:after {
     max-width: 0;
     position: absolute;
-    left: 0;
     bottom: 0;
     transition: 0.2s all;
     width: 100%;
@@ -19,11 +18,13 @@
     filter: blur(15px);
   }
   &:before {
+    left: 0;
     transition-timing-function: cubic-bezier(0.8, 0, 0.6, 1);
     background-color: rgba($secondary, 0.3);
     z-index: 10;
   }
   &:after {
+    right: 0;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     background-color: rgba($primary, 0.3);
     z-index: 20;
@@ -33,7 +34,7 @@
     &:before,
     &:after {
       // transform: rotateZ(90deg);
-      transition-duration: 0.4s;
+      transition-duration: 0.3s;
     }
     &:before {
       max-width: 100%;
@@ -51,12 +52,11 @@
 }
 
 @mixin button {
-  background: #fafafa radial-gradient(ellipse at top right, rgba(245,245,245,1) 0%,rgba(255,255,255,1) 100%);
-  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-  border-radius: 3px;
+  border-radius: 0;
   color: $body-color;
-  padding: 0.5em 1em;
+  padding: 0.333em 1em;
   overflow: hidden;
+  border: 2px solid transparent;
   // text-shadow: 0 0 0 #fff;
   // transition: 1s ease-in-out all;
   // &:hover {
@@ -64,6 +64,8 @@
   // }
   @include slide-in;
   &:hover {
+    background: #fafafa radial-gradient(ellipse at top right, rgba(245,245,245,1) 0%,rgba(255,255,255,1) 100%);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     // background: #fafafa radial-gradient(ellipse at top right, rgba(225,225,225,1) 0%,rgba(255,255,255,1) 100%);
   }
 }
