@@ -1,5 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Arvo:400,700|Titillium+Web:400,200,700);
 @import 'variables';
+@import 'mixins';
+@import 'animations';
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -203,7 +206,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-image: url(../images/bg-white-mezotint-tile.gif);
+  background: url(../images/bg-white-mezotint-tile.gif),
+              url(../images/bg-white-mezotint-un.gif) no-repeat top center;
   // background-image: url(../images/bg-white-mezotint-tile.gif), radial-gradient(ellipse at top right, rgba(235,235,235,1) 0%,rgba(245,245,245,0) 100%), linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(235,235,235,1) 100%);
   // background-image: url(../images/bg-white-mezotint-tile.gif), radial-gradient(ellipse at top right, rgba(235,235,235,1) 0%,rgba(245,245,245,0) 100%);
   color: $body-color;
@@ -625,7 +629,59 @@ pre tt:after {
     font-size: 100%;
   }
 }
-main.main {
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wrap {
   max-width: 960px;
   margin: 0 auto;
+}
+main.main {
+  padding: 40px 0;
+  h1 {
+    text-align: center;
+    font-size: 3.6rem;
+    // color: lighten($body-color, 10);
+    text-shadow: 0px 5px 8px rgba($primary,0.2);
+  }
+  .container {
+    margin-top: 2rem;
+    .btn {
+      @include slide-in(0.2,0.5);
+      margin: 30px auto;
+      display: inline-block;
+      font-size: 1.6rem;
+      padding: 0.66em;
+      font-weight: 700;
+      text-transform: capitalize;
+      // letter-spacing: -0.05em;
+
+      &:hover {
+        color: $body-color;
+        text-decoration: none;
+      }
+    }
+  }
+  section {
+    padding: 40px 0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    &:nth-child(odd) {
+      background-image: url(../images/bg-green-mezotint-tile.gif);
+    }
+    h2 {
+      text-align: center;
+      margin: 1em 0 0.3em;
+    }
+    .icon {
+      svg,img {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        display: block;
+      }
+    }
+  }
 }

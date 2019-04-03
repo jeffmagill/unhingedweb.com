@@ -1,10 +1,17 @@
 import React from 'react'
 
 import "./footer.scss"
+import LongIsland from '../images/icons/long-island.svg';
 
 const Footer = () => (
   <footer id="footer">
-  © {new Date().getFullYear()}, Unhinged Web Studio
+    <span>
+      © {new Date().getFullYear()}, Unhinged Web Studio, Inc.
+    </span>
+    <LongIsland/>
+    <span>
+      Proudly based in Long Island, New York
+    </span>
   </footer>
 )
 

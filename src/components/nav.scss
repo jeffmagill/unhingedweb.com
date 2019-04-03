@@ -17,6 +17,7 @@ nav#nav {
         display: block;
         font: bold 1.5rem Arvo;
         @include button;
+        border-color: transparent;
         &:hover {
           text-decoration: none;
         }

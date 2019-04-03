@@ -1,0 +1,15 @@
+TODO
+
+bottom of page call to action from https://www.bowenmedia.com/work/elisa-distefano
+clients list/logo
+quote/testimonial
+case studies
+add cockpit cms
+page describing maintenance plans
+page for wordpress training
+
+Infrastructure/CI/CD
+S3
+Cloudfront
+Jenkins
+Gitlab ci/cd
