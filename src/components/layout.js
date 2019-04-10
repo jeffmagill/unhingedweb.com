@@ -6,7 +6,7 @@ import Header from './header'
 import Footer from './footer'
 import './layout.scss'
 
-const Layout = ({ children, cssClass, fullWidth }) => (
+const Layout = ({ children, cssClass }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -26,7 +26,7 @@ const Layout = ({ children, cssClass, fullWidth }) => (
         <Header siteTitle={data.site.siteMetadata.title}
                 menuLinks={data.site.siteMetadata.menuLinks}
           />
-        <main class={'main ' + cssClass + (fullWidth ? '' : ' wrap ') }>
+        <main class={'main ' + cssClass }>
           {children}
         </main>
         <Footer />
@@ -38,12 +38,10 @@ const Layout = ({ children, cssClass, fullWidth }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   cssClass: PropTypes.string,
-  fullWidth: PropTypes.boolean,
 }
 
 Layout.defaultProps = {
   cssClass: ``,
-  fullWidth: false,
 }
 
 export default Layout

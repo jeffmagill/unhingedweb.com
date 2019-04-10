@@ -4,8 +4,12 @@ import PropTypes from 'prop-types'
 const Section = ({ children, icon, title, background, cssClass }) => (
   <section style={{background:background}}>
     <div class="wrap">
-      <span class="icon">{icon()}</span>
-      <h2>{title}</h2>
+      <header>
+        {icon &&
+          <span class="icon">{icon()}</span>
+        }
+        <h2>{title}</h2>
+      </header>
       <div class="content">
         {children}
       </div>

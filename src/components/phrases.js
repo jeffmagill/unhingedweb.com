@@ -3,7 +3,7 @@ import React from 'react'
 import "./phrases.scss"
 
 const Phrases = () => (
-  <section id="phrases">
+  <section id="phrases" class="wrap">
     <span class="phrase phrase1">We</span>
     <span class="phrase phrase2">create partnerships</span>
     <span class="phrase phrase3">with our clients to solve</span>

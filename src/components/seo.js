@@ -14,10 +14,12 @@ function SEO({ description, lang, meta, keywords, title }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
+        // const page_class = title.toLowerCase()
         return (
           <Helmet
             htmlAttributes={{
               lang,
+              class: 'test'
             }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}

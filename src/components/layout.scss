@@ -451,6 +451,10 @@ blockquote {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-family: "Titillium Web";
+  font-weight: 200;
+  font-size:1.66rem;
+  line-height: 1.1;
 }
 form {
   margin-left: 0;
@@ -668,12 +672,25 @@ main.main {
     padding: 40px 0;
     font-size: 1.4rem;
     line-height: 1.4;
+    > div {
+      display: flex;
+      header {
+        flex: 25%;
+        padding-right: 5px;
+        border-right: 2px solid rgba($primary, 0.5);
+        margin-right: 25px;
+      }
+      .content {
+        flex: 75%;
+      }
+    }
+
     &:nth-child(odd) {
-      background-image: url(../images/bg-green-mezotint-tile.gif);
+      // background-image: url(../images/bg-green-mezotint-tile.gif);
     }
     h2 {
       text-align: center;
-      margin: 1em 0 0.3em;
+      margin: 0 0 0.3em;
     }
     .icon {
       svg,img {
@@ -681,6 +698,7 @@ main.main {
         height: 150px;
         margin: auto;
         display: block;
+        background: rgba(255,0,0,.2);
       }
     }
   }
