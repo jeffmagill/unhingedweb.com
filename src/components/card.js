@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Section = ({ children, icon, title, background, cssClass }) => {
+const Card = ({ children, icon, title, background, cssClass }) => {
   const Icon = icon;
   return (
     <section style={{background:background}}>
@@ -20,18 +20,18 @@ const Section = ({ children, icon, title, background, cssClass }) => {
   )
 }
 
-Section.propTypes = {
+Card.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.func,
   background: PropTypes.string,
   cssClass: PropTypes.string,
 }
 
-Section.defaultProps = {
+Card.defaultProps = {
   title: ``,
   icon: ``,
   background: ``,
   cssClass: ``,
 }
 
-export default Section
+export default Card

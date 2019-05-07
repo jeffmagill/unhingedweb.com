@@ -23,13 +23,15 @@ const Layout = ({ children, cssClass }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title}
-                menuLinks={data.site.siteMetadata.menuLinks}
-          />
-        <main class={'main ' + cssClass }>
-          {children}
-        </main>
-        <Footer />
+        <div class={cssClass}>
+          <Header siteTitle={data.site.siteMetadata.title}
+                  menuLinks={data.site.siteMetadata.menuLinks}
+            />
+          <main class='main'>
+            {children}
+          </main>
+          <Footer />
+        </div>
       </>
     )}
   />
