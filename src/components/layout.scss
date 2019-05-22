@@ -635,7 +635,7 @@ pre tt:after {
 }
 .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 .wrap {
@@ -654,7 +654,7 @@ main.main {
     margin-top: 2rem;
     .btn {
       @include slide-in(0.2,0.5);
-      margin: 30px auto;
+      margin: 30px;
       display: inline-block;
       font-size: 1.6rem;
       padding: 0.66em;
@@ -672,7 +672,28 @@ main.main {
     padding: 40px 0;
     font-size: 1.4rem;
     line-height: 1.4;
-    > div {
+    h2 {
+      text-align: center;
+      margin: 0 0 0.3em;
+    }
+    .icon {
+      svg,img {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        display: block;
+      }
+    }
+  }
+  .grid {
+    display: grid;
+    &.grid--2col { grid-template-columns: 50% 50%; }
+    &.grid--3col { grid-template-columns: 33% 33% 33%; }
+    &.grid--4col { grid-template-columns: 25% 25% 25% 25%; }
+    &.grid--5col { grid-template-columns: 20% 20% 20% 20% 20%; }
+  }
+  .section-list {
+    .wrap {
       display: flex;
       header {
         flex: 25%;
@@ -684,20 +705,20 @@ main.main {
         flex: 75%;
       }
     }
-
-    &:nth-child(odd) {
-      // background-image: url(../images/bg-green-mezotint-tile.gif);
-    }
-    h2 {
-      text-align: center;
-      margin: 0 0 0.3em;
-    }
-    .icon {
-      svg,img {
-        width: 150px;
-        height: 150px;
-        margin: auto;
-        display: block;
+    &.section-list--alternate {
+      > :nth-child(even) {
+        .wrap {
+          flex-direction: row-reverse;
+          header {
+            flex: 25%;
+            padding-left: 5px;
+            padding-right: 0;
+            border-left: 2px solid rgba($primary, 0.5);
+            border-right: 0 none;
+            margin-left: 25px;
+            margin-right: 0;
+          }    
+        }  
       }
     }
   }

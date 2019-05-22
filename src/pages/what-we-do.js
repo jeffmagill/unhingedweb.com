@@ -25,11 +25,11 @@ import SocialIcon from '../images/icons/maintenance.svg'
 const WhatWeDo = () => (
   <Layout cssClass="what-we-do">
     <SEO title="Services" />
-    <section>
-      <h1>Services</h1>
-      <blockquote class="wrap">
-        People usually come to us when they need websites, mobile apps, logos or print collateral. Each project is the result of a process of fusing your business knowledge with our digital expertise. We dont use cookie cutter solutions; we have an effective process that meets goals.
-      </blockquote>
+    <h1>Services</h1>
+    <blockquote class="wrap">
+      People usually come to us when they need websites, mobile apps, logos or print collateral. Each project is the result of a process of fusing your business knowledge with our digital expertise. We dont use cookie cutter solutions; we have an effective process that meets goals.
+    </blockquote>
+    <section class="grid grid--4col wrap">
       <Card title="Strategy" icon={StrategyIcon}/>
       <Card title="Information Architecture" icon={IaIcon}/>
       <Card title="UX/UI" icon={UxIcon}/>
@@ -44,8 +44,8 @@ const WhatWeDo = () => (
       <Card title="Social Media Integration" icon={SocialIcon}/>
     </section>
 
-    <section>
-      <h1>Our Process</h1>
+    <h1>Our Process</h1>
+    <section class="section-list section-list--alternate">
       <Section title="Research" icon={ResearchIcon}>
         <p>Research is the first and most important step in good design. It informs all other decisions for the rest of the project. It’s like studying before the big test. There may be other things that you would rather be doing, but when the test rolls around you know your answers are right. We do our research so that we understand your who your audience is and how they think.</p>
       </Section>

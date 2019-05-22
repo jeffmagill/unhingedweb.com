@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Card = ({ children, icon, title, background, cssClass }) => {
+const Card = ({ children, icon, title, background, _cssClass }) => {
   const Icon = icon;
+  const safe_title = title.toLowerCase().replace(/\W+/,"-");
+  const cssClass = [ "card", safe_title, _cssClass ].join(" ").trim();
   return (
-    <section style={{background:background}}>
+    <section class={cssClass} style={{background:background}}>
       <div class="wrap">
         <header>
           {icon &&
