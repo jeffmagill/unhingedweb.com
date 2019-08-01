@@ -1,6 +1,5 @@
 TODO
 
-bottom of page call to action from https://www.bowenmedia.com/work/elisa-distefano
 clients list/logo
 quote/testimonial
 case studies
@@ -13,3 +12,18 @@ S3
 Cloudfront
 Jenkins
 Gitlab ci/cd
+
+
+
+
+Inspiration:
+https://www.bowenmedia.com/work/elisa-distefano - bottom cta
+https://codepen.io/rgg/pen/QbRyOq - progress bar
+https://tympanus.net/Tutorials/3DShadingWithBoxShadows/ - grid promo
+http://studiomh.co.uk/ - minimal designer
+http://rollpark.us/ - viewport animations   
+https://solarweekend.com/15-years/ - ?
+https://thehappyprints.com/ - viewport animations
+https://www.heroku.com/ - iconography
+http://www.jennyjohannesson.com/ - general, indexed scrolling   
+https://www.awwwards.com/ - finding more inspiration
