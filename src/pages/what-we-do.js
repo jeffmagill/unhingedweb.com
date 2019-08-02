@@ -6,11 +6,11 @@ import SEO from '../components/seo'
 import Section from '../components/section'
 import Card from '../components/card'
 
-import ResearchIcon from '../images/icons/v1/research.svg'
+import ResearchIcon from '../images/icons/v2/research.svg'
 import StrategyIcon from '../images/icons/v2/startup.svg'
 import DesignIcon from '../images/icons/v2/design-tool.svg'
 import DevelopIcon from '../images/icons/v2/devops.svg'
-import MaintenanceIcon from '../images/icons/v1/maintenance.svg'
+import MaintenanceIcon from '../images/icons/v2/settings.svg'
 
 import UxIcon from '../images/icons/v2/users.svg'
 import IaIcon from '../images/icons/v2/hierarchy.svg'
@@ -19,7 +19,7 @@ import CmsIcon from '../images/icons/v2/test.svg'
 import MobileIcon from '../images/icons/v2/content.svg'
 import TechnicalStrategyIcon from '../images/icons/v2/rocket.svg'
 import PrintIcon from '../images/icons/v2/study.svg'
-import LogoIcon from '../images/icons/v1/maintenance.svg'
+import LogoIcon from '../images/icons/v2/logo.svg'
 import SocialIcon from '../images/icons/v2/social-media.svg'
 
 
