@@ -67,10 +67,6 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
 mark {
   background-color: #ff0;
   color: #000;
@@ -140,10 +136,44 @@ html [type='button'] {
 svg {
   g, path {
     transition: opacity ease-in-out 0.2s;
+    // opacity: 0.8;
   }
   &:hover {
     g, path {
       opacity: 1;
+    }
+
+    path,
+    ellipse,
+    rect
+    { 
+      transition: all ease-in-out 0.2s;
+
+      &[style*="fill: rgb(246, 190, 204);"],
+      &[style*="fill: rgb(243, 170, 187)"],
+      &[style*="fill: rgb(200, 239, 123)"],
+      &[style*="fill: rgb(194, 231, 238)"],
+      &[style*="fill: rgb(137, 209, 223)"], 
+      &[style*="color: rgb(84, 255, 80);"],
+      &[fill="#f3aabb"],
+      &[fill="#dbebf8"],
+      &[fill="#ccf084"],
+      &[fill="#c8ef7b"],
+      &[fill="#c2e7ee"],
+      &[fill="#95e000"]
+      {
+        fill: $primary !important;
+        color: $primary !important;
+        fill-opacity: 1;
+      }
+      
+      //instagram circle
+      &[fill="#e75a7c"] {
+        fill: #fff !important;
+        color: #fff !important;
+        fill-opacity: 1;
+      }
+
     }
   }
 }
@@ -249,7 +279,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin: 0.67em 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -594,6 +624,32 @@ pre tt:after {
   max-width: 960px;
   margin: 0 auto;
 }
+hr.wrap {
+  $height: 4px;
+  $spacing: 3;
+  $hr_color: rgba(67, 72, 74, 0.8);
+
+  margin-top: 4 * $spacing * $height;
+  margin-bottom: 4 * $spacing * $height;
+  position: relative;
+  background: $hr_color;
+  height: $height;
+  border-radius: $height / 2;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    margin-top:-1 * $spacing * $height;
+    width: 100%;
+    height: $height;
+    background: rgba($hr_color, 0.5s);
+    border-radius: $height / 2;
+  }
+  &::after {
+    margin-top: $spacing * $height;
+  }
+}
 main.main {
   padding: 40px 0;
   h1 {
@@ -673,4 +729,10 @@ main.main {
       }
     }
   }
+}
+:first-child {
+  margin-top: 0;
+}
+:last-child {
+  margin-bottom: 0;
 }
