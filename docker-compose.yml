@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+
+  web:
+    container_name: gatsby
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 8001:8000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
