@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Arvo:400,700|Titillium+Web:400,200,700);
+            h1,h2,h3,h4,h5,h6 { font-family: Arvo;}
+            body { 
+                font-family: Lato; 
+                background: url("src/images/bg-white-mezotint-tile.gif"), url("src/images/bg-white-mezotint-un.gif") no-repeat top center
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                margin: 20px 100px;
+                gap: 20px;
+            }
+            .grid img {
+                width: 100%;
+            }
+            .wrap { width: 1080px; margin: 0 auto;}
+            nav ul { display: flex; list-style: none; margin: 0 0 0 -20px; padding: 0; }
+            nav ul li { padding: 0; margin: 0; }
+            nav ul li a { padding: 20px; }
+
+            .dropping {
+                transition: all 0.5s cubic-bezier(0.32, 0, 0.67, 0);
+                transform: translate(0, 250px) rotateZ(25deg);
+                transform-origin: bottom left;
+                opacity: 0;
+            }
+            .dropping.dropping--right {
+                transform: translate(0, 250px) rotateZ(-25deg);
+                transform-origin: bottom right;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                console.log('loaded');
+
+                document.addEventListener('click', () => {
+                    console.log('clicked');
+                    let leaves = leafs(document.body);
+                    drop(leaves);
+                });
+
+            });
+
+            const leafs = (t = {}) => {
+                if(t.children && t.children.length) {
+                    let results = [...t.children].flatMap(leafs);
+                    return results;
+                }
+                else {
+                    return [ t ];
+                }
+            }
+
+            function drop(items) {
+                console.log("dropping", items);
+                items.forEach( (el, index) => setTimeout( () => { 
+                    if(index % 2 == 0) {
+                        el.classList.toggle('dropping--right');
+                    }
+                    el.classList.toggle('dropping')
+                }, Math.random()*333));
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h1>Drop Animation</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">First</a></li>
+                    <li><a href="#">Second</a></li>
+                    <li><a href="#">Third</a></li>
+                    <li><a href="#">Fourth</a></li>
+                    <li><a href="#">Fifth</a></li>
+                </ul>
+            </nav>
+            <p>Lorem ipsum dolor sit amet, in consul consulatu pri, cu mel iriure repudiare. Cu veri verear denique eos. Ea pro tota autem hendrerit. Sea omnium pertinax definitionem ex, ne mei animal eloquentiam.</p>
+            <p>Enim corrumpit torquatos cu quo. Cum populo suavitate cu. Pro ea diam utroque. Id oporteat instructior delicatissimi eam. Eligendi accusata ei eos, ut equidem vivendo constituto eos, est in laudem ridens semper. Nam diam tibique et. Usu in labitur percipit, an omnes molestie indoctum sit.</p>
+    
+            <div class="grid">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+            </div>
+            <h2>Pro ut efficiantur comprehensam</h2>
+            <p>Ad his diceret sapientem principes, ne pri labores vocibus vituperata, has et senserit instructior. Ut quem labores eum. Usu id labore aperiri. Vis melius disputando at.</p>
+            <p>Iriure scripta accusam quo in, ei labore fierent qui. Tollit populo eirmod nec ne, usu timeam meliore blandit at. Usu ex dicant posidonium, dicant impetus cu qui. Duo cu dictas qualisque, malis intellegebat ius ut. Nec cu debet populo, at enim vocent eam, per id quem audiam voluptaria.</p>
+            <p>Cu vis minim legere dissentiet, id meis nullam ius. Id qui probatus quaerendum, te nemore facilis incorrupte ius. Mutat noluisse patrioque et vis, per ut laudem liberavisse. Qui suscipit vituperatoribus cu, postea prompta at sed. Ad perfecto reformidans vis. Insolens rationibus quaerendum no vix.</p>
+        </div>
+    </body>
+</html>
