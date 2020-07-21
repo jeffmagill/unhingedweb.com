@@ -10,7 +10,7 @@ const Footer = () => (
     </span>
     <LongIsland/>
     <span>
-      Proudly based in Long Island, New York
+      Proudly based on Long Island, New York
     </span>
   </footer>
 )

@@ -13,7 +13,8 @@ class DropLink extends React.Component  {
         this.onExit = this.onExit.bind(this);
         this.dropWhitelist = [ 
             'P',
-            'BLOCKQUOTE'
+            'BLOCKQUOTE',
+            'G'
         ];
     }
 

@@ -12,7 +12,7 @@ const Nav = ({ menuLinks }) => (
       {
         menuLinks.map(link =>
           <li key={link.name}>
-            <DropLink to={link.link} class={link.link.replace(/^\//g, '')}>
+            <DropLink to={link.link}>
               { reactStringReplace(link.name, /(\w+)/g, (match, i) => (
                 <span key={i}>{match}</span>
               )) }

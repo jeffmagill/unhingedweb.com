@@ -48,6 +48,8 @@ a {
   text-decoration: none;
   color: $green;
   transition: 0.2s ease-in-out all;
+  font-weight: 500;
+  margin: 0 0.2em;
 }
 a:active,
 a:hover {
@@ -495,7 +497,8 @@ b {
   font-weight: bold;
 }
 strong {
-  font-weight: bold;
+  font-weight: 900;
+  text-shadow: 0px 0.2em 0.12em rgba($primary,0.4);
 }
 dt {
   font-weight: bold;
@@ -652,11 +655,25 @@ hr.wrap {
 }
 main.main {
   padding: 40px 0;
+  a {
+    &:hover {
+      background-color: rgba($green, 0.66);
+      color: #fff;
+      margin: 0;
+      padding: 0 0.2em;
+    }
+  }
   h1 {
     text-align: center;
     font-size: 3.6rem;
     // color: lighten($body-color, 10);
   }
+  svg {
+    transition: transform ease-in-out 0.1s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }  
   .container {
     margin-top: 2rem;
     .btn {
@@ -704,12 +721,26 @@ main.main {
       display: flex;
       header {
         flex: 25%;
-        padding-right: 5px;
-        border-right: 2px solid rgba($primary, 0.5);
-        margin-right: 25px;
+        padding-right: 30px;
+        position: relative;
+        // border-right: 2px solid rgba($primary, 0.5);
+        // margin-right: 25px;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 100%;
+          top: 0;
+          right: 30px;
+          border: 0;
+          background-color: $body-color;
+          box-shadow: 1px 1px 2px rgba($primary, 1);
+        }
       }
       .content {
         flex: 75%;
+        display: flex;
+        align-items: center;
       }
     }
     &.section-list--alternate {
@@ -718,12 +749,11 @@ main.main {
           flex-direction: row-reverse;
           header {
             flex: 25%;
-            padding-left: 5px;
             padding-right: 0;
-            border-left: 2px solid rgba($primary, 0.5);
-            border-right: 0 none;
-            margin-left: 25px;
-            margin-right: 0;
+            padding-left: 30px;
+            &::after {
+              left: 30px;
+            }
           }    
         }  
       }
