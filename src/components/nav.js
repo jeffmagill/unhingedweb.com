@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import "./nav.scss"
+import DropLink from '../components/drop-link'
 
 const reactStringReplace = require('react-string-replace');
 
@@ -11,11 +12,11 @@ const Nav = ({ menuLinks }) => (
       {
         menuLinks.map(link =>
           <li key={link.name}>
-            <Link to={link.link} class={link.link.replace(/^\//g, '')}>
+            <DropLink to={link.link} class={link.link.replace(/^\//g, '')}>
               { reactStringReplace(link.name, /(\w+)/g, (match, i) => (
                 <span key={i}>{match}</span>
               )) }
-            </Link>
+            </DropLink>
           </li>)
       }
     </ul>

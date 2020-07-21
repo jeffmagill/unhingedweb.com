@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-
+import { TransitionState } from "gatsby-plugin-transition-link";
 import Header from './header'
 import Footer from './footer'
 import './layout.scss'
@@ -23,15 +23,24 @@ const Layout = ({ children, cssClass }) => (
     `}
     render={data => (
       <>
-        <div class={cssClass}>
-          <Header siteTitle={data.site.siteMetadata.title}
-                  menuLinks={data.site.siteMetadata.menuLinks}
-            />
-          <main class='main'>
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <TransitionState>
+          {({ mount, transitionStatus }) => {
+            console.log(transitionStatus)
+            return (
+              <>
+                <div class={cssClass + " unh-tl-wrapper " + transitionStatus}>
+                  <Header siteTitle={data.site.siteMetadata.title}
+                    menuLinks={data.site.siteMetadata.menuLinks}
+                    />
+                  <main class="main">
+                    {children}
+                  </main>
+                  <Footer />
+                </div>
+              </>
+              );
+            }}
+        </TransitionState>
       </>
     )}
   />

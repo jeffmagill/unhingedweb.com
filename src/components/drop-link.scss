@@ -1,0 +1,18 @@
+.dropping {
+    transition: all 0.5s cubic-bezier(0.32, 0, 0.67, 0);
+    transform: translate(0, 250px) rotateZ(25deg);
+    transform-origin: bottom left;
+    opacity: 0;
+    .dropping--right {
+        transform: translate(0, 250px) rotateZ(-25deg);
+        transform-origin: bottom right;
+    }
+}
+
+//entering, entered, exiting, and exited
+.unh-tl-wrapper {
+    transition: opacity ease-in-out 0.3s;
+    &.entering {
+        opacity: 0;
+    }
+}

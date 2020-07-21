@@ -1,6 +1,6 @@
 @import 'variables';
 
-@mixin slide-in($green-alpha: 0.3, $blue-alpha: 0.3) {
+@mixin slide-in($green-alpha: 0.3, $blue-alpha: 0.3, $slide-distance: 1, $transition-duration: 0.3s) {
   transition: 0.2s ease-in-out all;
   position:relative;
   overflow: hidden;
@@ -34,14 +34,14 @@
     &:before,
     &:after {
       // transform: rotateZ(90deg);
-      transition-duration: 0.3s;
+      transition-duration: $transition-duration;
     }
     &:before {
-      max-width: 100%;
+      max-width: $slide-distance * 100%;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     &:after {
-      max-width: 100%;
+      max-width: $slide-distance * 100%;
       transition-timing-function: cubic-bezier(0.8, 0, 0.6, 1);
     }
   }
@@ -75,7 +75,7 @@
   //   text-shadow: 0 0 10em $green;
   text-transform: center;
   // }
-  @include slide-in;
+  @include slide-in(0.5, 0.5, 0.66, 0.33s);
   &:hover {
     background: #fafafa radial-gradient(ellipse at top right, rgba(245,245,245,1) 0%,rgba(255,255,255,1) 100%);
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);

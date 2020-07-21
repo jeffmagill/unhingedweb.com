@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Arvo:400,700|Titillium+Web:400,200,700);
+            h1,h2,h3,h4,h5,h6 { font-family: Arvo;}
+            body { 
+                font-family: Lato; 
+                background: url("src/images/bg-white-mezotint-tile.gif"), url("src/images/bg-white-mezotint-un.gif") no-repeat top center
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                margin: 20px 100px;
+                gap: 20px;
+            }
+            .grid img {
+                width: 100%;
+            }
+            .wrap { width: 1080px; margin: 0 auto;}
+            canvas { border: 1px solid red; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; }
+        </style>
+        <script>
+            setInterval( () => { console.log((new Date()).getSeconds(), (new Date().getMilliseconds())) }, 1000)
+            let context = null;
+            document.addEventListener("DOMContentLoaded", () => {
+                console.log('here');
+                let canvas = document.getElementById('mezoCanvas');
+                context = canvas.getContext("2d");
+
+                document.addEventListener('click', () => {
+                    console.log('clicked');
+                    for (let i = 0; i < 100; i++) {
+                        let geo = { x: Math.random() * 500, y: Math.random()*500, size: 4};
+                        let color = { r:1, g:1, b:1, a: 255};
+                        
+                        draw_point(geo, color);
+                    }
+                });
+
+            });
+
+            function draw_point(geo, color) {
+                context.fillStyle = "rgba("+color.r+","+color.g+","+color.b+","+(color.a/255)+")";
+                context.fillRect( geo.x, geo.y, geo.size, geo.size ); 
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            <h1>Canvas Animating Example</h1>
+            <p>Lorem ipsum dolor sit amet, in consul consulatu pri, cu mel iriure repudiare. Cu veri verear denique eos. Ea pro tota autem hendrerit. Sea omnium pertinax definitionem ex, ne mei animal eloquentiam.</p>
+            <p>Enim corrumpit torquatos cu quo. Cum populo suavitate cu. Pro ea diam utroque. Id oporteat instructior delicatissimi eam. Eligendi accusata ei eos, ut equidem vivendo constituto eos, est in laudem ridens semper. Nam diam tibique et. Usu in labitur percipit, an omnes molestie indoctum sit.</p>
+    
+            <div class="grid">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/400/200">
+            </div>
+            <h2>Pro ut efficiantur comprehensam</h2>
+            <p>Ad his diceret sapientem principes, ne pri labores vocibus vituperata, has et senserit instructior. Ut quem labores eum. Usu id labore aperiri. Vis melius disputando at.</p>
+            <p>Iriure scripta accusam quo in, ei labore fierent qui. Tollit populo eirmod nec ne, usu timeam meliore blandit at. Usu ex dicant posidonium, dicant impetus cu qui. Duo cu dictas qualisque, malis intellegebat ius ut. Nec cu debet populo, at enim vocent eam, per id quem audiam voluptaria.</p>
+            <p>Cu vis minim legere dissentiet, id meis nullam ius. Id qui probatus quaerendum, te nemore facilis incorrupte ius. Mutat noluisse patrioque et vis, per ut laudem liberavisse. Qui suscipit vituperatoribus cu, postea prompta at sed. Ad perfecto reformidans vis. Insolens rationibus quaerendum no vix.</p>
+        </div>
+        
+        <canvas id="mezoCanvas"></canvas>
+    </body>
+</html>
