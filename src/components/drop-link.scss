@@ -1,12 +1,19 @@
+$transition: all 0.5s cubic-bezier(0.32, 0, 0.67, 0);
+$translate: translate(0, 100%);
+$rotation: 25deg;
+
 .dropping {
-    transition: all 0.5s cubic-bezier(0.32, 0, 0.67, 0);
-    transform: translate(0, 250px) rotateZ(25deg);
+    transition: $transition;
+    transform: $translate rotateZ($rotation);
     transform-origin: bottom left;
     opacity: 0;
-    .dropping--right {
-        transform: translate(0, 250px) rotateZ(-25deg);
+    &.dropping--right {
+        transform: $translate rotateZ(-1 * $rotation);
         transform-origin: bottom right;
     }
+}
+img.dropping {
+    transition: $transition!important; /* gatsby-image puts a transition on the image */
 }
 
 //entering, entered, exiting, and exited

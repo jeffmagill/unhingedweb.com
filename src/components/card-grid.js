@@ -4,12 +4,16 @@ import PropTypes from 'prop-types'
 class CardGrid extends React.Component  {
   constructor(props) {
     super(props);
-    this.cssClasses = `grid grid--${this.props.columns}col wrap`;
+    this.cssClasses = `grid grid--${this.props.columns}col`;
+
+    if(this.props.fullWidth === "true") {
+      this.cssClasses += ' wrap'
+    }
   }
   
   render() {
     return (
-        <section class={this.cssClasses}>
+        <section className={this.cssClasses}>
             {this.props.children}
         </section>
     );

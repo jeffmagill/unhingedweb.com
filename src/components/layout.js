@@ -25,14 +25,13 @@ const Layout = ({ children, cssClass }) => (
       <>
         <TransitionState>
           {({ mount, transitionStatus }) => {
-            console.log(transitionStatus)
             return (
               <>
-                <div class={cssClass + " unh-tl-wrapper " + transitionStatus}>
+                <div className={cssClass + " unh-tl-wrapper " + transitionStatus}>
                   <Header siteTitle={data.site.siteMetadata.title}
                     menuLinks={data.site.siteMetadata.menuLinks}
                     />
-                  <main class="main">
+                  <main className="main">
                     {children}
                   </main>
                   <Footer />

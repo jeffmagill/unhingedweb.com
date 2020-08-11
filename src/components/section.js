@@ -5,14 +5,14 @@ const Section = ({ children, icon, title, background, cssClass }) => {
   const Icon = icon;
   return (
     <section style={{background:background}}>
-      <div class="wrap">
+      <div className="wrap">
         <header>
           {icon &&
-            <span class="icon">{<Icon/>}</span>
+            <span className="icon">{<Icon/>}</span>
           }
           <h2>{title}</h2>
         </header>
-        <div class="content">
+        <div className="content">
           {children}
         </div>
       </div>

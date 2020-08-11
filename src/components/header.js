@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import DropLink from '../components/drop-link'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Nav from "./nav"
@@ -9,9 +9,9 @@ import Logo from '../images/logo.svg';
 const Header = ({ siteTitle, menuLinks }) => (
   <header id="header">
     <h1>
-      <Link to="/">
+      <DropLink to="/">
         <Logo />
-      </Link>
+      </DropLink>
     </h1>
     <Nav menuLinks={menuLinks}/>
   </header>

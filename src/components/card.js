@@ -1,5 +1,7 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import SVG from '../components/svg'
+import { graphql } from "gatsby"
+import QueriedImage from "../components/queried-image"
 
 class Card extends React.Component  {
   constructor(props) {
@@ -10,20 +12,32 @@ class Card extends React.Component  {
   }
   
   render() {
-    const Icon = this.props.icon;
-    return <section class={this.cssClass} style={{background:this.background}}>
-      <div class="wrap">
-        <header foo={this.props.showDescription}>
+    let Icon = null;
+
+    if(this.props.icon === undefined) {
+      Icon = null;
+    }
+    else if(this.props.icon.endsWith(".svg")) {
+      let path = this.props.icon.replace(".svg", "");
+      Icon = <SVG image={path}/>
+    }
+    else {
+      // Icon = <img src={this.props.icon} alt={this.props.title} />
+      // Icon = <Img fixed={data.file.childImageSharp.fixed} />
+      Icon = <QueriedImage src={this.props.icon}/>
+    }
+
+    return <article className={this.cssClass} style={{background:this.background}}>
+        <header>
           {Icon &&
-            <span class="icon">{<Icon/>}</span>
+            <span className="icon">{Icon}</span>
           }
           <h2>{this.props.title}</h2>
         </header>
-        <div class="content">
+        <div className="content">
           {this.props.children}
         </div>
-      </div>
-    </section>
+    </article>
   }
 
   toggle_body() {
@@ -39,11 +53,18 @@ class Card extends React.Component  {
 //   showDescription: PropTypes.bool,
 // }
 
-Card.defaultProps = {
-  title: ``,
-  icon: ``,
-  background: ``,
-  cssClass: ``,
-  showDescription: false
-}
 export default Card
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "images/projects/babylon-public-library/homepage-960.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`

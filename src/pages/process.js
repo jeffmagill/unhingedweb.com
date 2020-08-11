@@ -17,7 +17,7 @@ const OurProcess = () => (
     <SEO title="Our Process" />
   
     <h1>Our Process</h1>
-    <section class="section-list section-list--alternate">
+    <section className="section-list section-list--alternate">
       <Section title="Research" icon={ResearchIcon}>
         <p>
           Research is the first and most important step in good design. It informs all other decisions for the rest of the project. 
@@ -43,9 +43,9 @@ const OurProcess = () => (
       </Section>
       <Section title="Maintenance" icon={MaintenanceIcon}>
         <p>If you leave something alone for long enough, it will degrade until it isnt useful anymore. Either that, or someone will come and 
-          take it for him or herself. Websites are the same. Even the best websites become ineffective or vulnerable over time. That is why
+          take it away. Websites are the same. Even the best websites become ineffective or vulnerable over time. That is why
           it is important to <strong>protect your initial investment with a maintenance plan to keep the website running fast, secure, 
-          optimized while driving conversions</strong>.</p>
+          and optimized while driving conversions</strong>.</p>
       </Section>
     </section>
   </Layout>

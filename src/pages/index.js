@@ -9,7 +9,7 @@ const IndexPage = () => (
   <Layout cssclass="home">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Phrases/>
-    <div class="container">
+    <div className="container">
       <Link to="/what-we-do" class="btn"><span>What we can do for you</span></Link>
       <Link to="/our-work" class="btn"><span>Recent Projects</span></Link>
     </div>

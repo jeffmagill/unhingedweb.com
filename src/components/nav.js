@@ -1,8 +1,8 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import "./nav.scss"
 import DropLink from '../components/drop-link'
+
+import "./nav.scss"
 
 const reactStringReplace = require('react-string-replace');
 
